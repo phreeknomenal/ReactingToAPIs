@@ -17,7 +17,7 @@ const Films = () => {
                     <div className="col" key={people.id}>
                         <div className="card shadow my-3">
                             <div className="card-body">
-                                <h4 className="card-title mb-2">
+                                <h4 className="card-title mb-2 text-info">
                                     {people.name}
                                 </h4>
                                 <p className="card-subtitle mb-1 text-muted">
@@ -26,7 +26,7 @@ const Films = () => {
                                 <p className="card-subtitle mb-1 text-muted">
                                     <span className="test">Gender: </span>{people.gender}
                                 </p>
-                                <a href={people.url} class="btn btn-primary my-2" target="_blank" rel="noreferrer">See JSON</a>
+                                <a href={people.url} className="btn btn-secondary my-2" target="_blank" rel="noreferrer">See JSON</a>
                             </div>
                         </div>
                     </div>
