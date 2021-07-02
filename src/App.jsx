@@ -1,31 +1,39 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import Header from './components/Header';
 import Films from './components/Films';
+import People from './components/People';
 
 const App = () => {
     const [films, setFilms] = useState(false);
-
-    useEffect(() => {
-        setFilms();
-    }, []);
+    const [people, setPeople] = useState(false);  
 
     if (films) {
         return (
             <div className="container-fluid">
+                <Header />
                 <Films/>
             </div>
         );
-    } else {
+    } else if (people) {
         return (
             <div className="container-fluid">
-                <div id="box1" className="row">
+                <Header />
+                <People/>
+            </div>
+        );
+    } else {
+        return (            
+            <div className="container-fluid">
+                <Header />
+                <div id="box1" className="row text-center">
                     <div className="col">
                         <button onClick={() => setFilms(true)} type="button" className="btn btn-primary">
                             Show Films
                         </button>
                     </div>
                     <div className="col justify-content-center">
-                        <button type="button" className="btn btn-primary">
+                        <button onClick={() => setPeople(true)} type="button" className="btn btn-primary">
                             Show People
                         </button>
                     </div>

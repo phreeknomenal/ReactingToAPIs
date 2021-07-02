@@ -12,14 +12,17 @@ const Films = () => {
 
     return (
         <main className="container">
-            <section className="row row-cols-2 mt-5">
+            <section className="row row-cols-1 mt-5">
                 {films.map(film => (
                     <div className="col" key={film.id}>
                         <div className="card shadow my-2">
                             <div className="card-body">
-                                <h4 className="card-title">
+                                <h3 className="card-title text-info">
                                     {film.title}
-                                </h4>
+                                </h3>
+                                <h6 className="card-title">
+                                    ({film.original_title_romanised} / {film.original_title})
+                                </h6>
                                 <p className="card-subtitle mb-1 text-muted">
                                     by {film.director}
                                 </p>
@@ -30,8 +33,8 @@ const Films = () => {
                         </div>
                     </div>
                 ))}
-
             </section>
+
         </main>
     );
 };
